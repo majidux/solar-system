@@ -1,10 +1,11 @@
-import Sun from './component/Sun';
+import Solar from './pages/Solar';
 import './style.scss';
 
 function App() {
   return (
     <div className='App'>
-      <Sun />
+      <strong className='text'>Majid</strong>
+      <Solar />
     </div>
   );
 }

@@ -1,44 +1,33 @@
-import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from 'drei';
-import Earth from '../Earth';
-import Stars from '../Stars';
 
-const Sun = () => {
+const Sky = () => {
   return (
     <>
-      <Canvas colorManagement>
-        <Stars />
-        <mesh>
-          {[...Array(6)].map((_, index) => (
-            <meshMatcapMaterial
-              attachArray='material'
-              key={index}
-              color='#e45'
-            />
-          ))}
-          <sphereGeometry attach='geometry' args={[1, 1000, 1000]} />
-        </mesh>
-        <OrbitControls
-          screenSpacePanning
-          autoRotate
-          autoRotateSpeed={2}
-          enableDamping
-          dampingFactor={1.5}
-          enableKeys
-          enableZoom
-          // keys={
-          //   {
-          //     LEFT: 37,
-          //     UP: 38,
-          //     RIGHT: 39,
-          //     BOTTOM: 40,
-          //   } as const
-          // }
-        />
-        <Earth />
-      </Canvas>
+      <mesh>
+        {[...Array(6)].map((_, index) => (
+          <meshLambertMaterial
+            attachArray='material'
+            attach='material'
+            key={index}
+            color='lightgreen'
+            fog
+            clipShadows
+          />
+        ))}
+        <sphereGeometry attach='geometry' args={[1, 1000, 1000]} />
+      </mesh>
+      <OrbitControls
+        screenSpacePanning
+        enableDamping
+        dampingFactor={1.5}
+        enableKeys
+        enableZoom
+      />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={0.5} />
+      <fog attach='fog' args={['#070710', 100, 700]} />
     </>
   );
 };
 
-export default Sun;
+export default Sky;
