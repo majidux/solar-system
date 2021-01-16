@@ -1,30 +1,31 @@
 import { Canvas } from 'react-three-fiber';
 import { OrbitControls } from 'drei';
-import mehdi from '../../assets/mehdi.jpg';
 import Earth from '../Earth';
+import Stars from '../Stars';
 
 const Sun = () => {
   return (
     <>
       <Canvas colorManagement>
+        <Stars />
         <mesh>
           {[...Array(6)].map((_, index) => (
             <meshMatcapMaterial
               attachArray='material'
               key={index}
-              color='yellow'
+              color='#e45'
             />
           ))}
           <sphereGeometry attach='geometry' args={[1, 1000, 1000]} />
         </mesh>
         <OrbitControls
           screenSpacePanning
-          // autoRotate
-          autoRotateSpeed={5}
-          enableDamping={true}
+          autoRotate
+          autoRotateSpeed={2}
+          enableDamping
           dampingFactor={1.5}
-          enableKeys={true}
-          enableZoom={true}
+          enableKeys
+          enableZoom
           // keys={
           //   {
           //     LEFT: 37,
