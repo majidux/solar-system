@@ -1,7 +1,7 @@
 import { Canvas } from 'react-three-fiber';
-import Earth from '../../component/Earth';
+import Earth from '../../component/Moon';
 import Stars from '../../component/Stars';
-import Sun from 'src/component/Sun';
+import Sun from 'src/component/Earth';
 
 const Solar = () => {
   return (
