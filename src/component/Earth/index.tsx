@@ -1,15 +1,20 @@
 import { OrbitControls } from 'drei';
+import { TextureLoader } from 'three';
+import { useLoader } from 'react-three-fiber';
+import earthPng from '../../assets/earth.jpg';
 
-const Sky = () => {
+const Earth = () => {
+  const earth = useLoader(TextureLoader, earthPng);
   return (
     <>
       <mesh>
         {[...Array(6)].map((_, index) => (
-          <meshLambertMaterial
+          <meshStandardMaterial
             attachArray='material'
             attach='material'
             key={index}
             color='lightgreen'
+            map={earth}
             fog
             clipShadows
           />
@@ -17,6 +22,8 @@ const Sky = () => {
         <sphereGeometry attach='geometry' args={[1, 1000, 1000]} />
       </mesh>
       <OrbitControls
+        autoRotate
+        autoRotateSpeed={1}
         screenSpacePanning
         enableDamping
         dampingFactor={1.5}
@@ -30,4 +37,4 @@ const Sky = () => {
   );
 };
 
-export default Sky;
+export default Earth;

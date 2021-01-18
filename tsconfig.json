@@ -30,5 +30,10 @@
     "noEmit": true
   },
   "exclude": ["node_modules"],
-  "include": ["./src/**/*.tsx", "./src/**/*.ts", "src/component/useStore.js"]
+  "include": [
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "src/component/useStore.js",
+    "src/component/Stars2/index.jsx"
+  ]
 }
