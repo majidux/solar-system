@@ -21,8 +21,8 @@ const Moon = (): any => {
     gl.render(virtualScene, virtualCam.current);
   }, 1);
 
-  const width = size.width / 2 - 80;
-  const height = size.height / 2 - 80;
+  const width = size.width / 2 - 380;
+  const height = size.height / 2 - 280;
 
   return (
     <>
@@ -58,7 +58,7 @@ const Moon = (): any => {
           />
         ))}
         <sphereBufferGeometry attach='geometry' args={[0.75, 32, 32]} />
-        <sphereGeometry attach='geometry' args={[40, 20, 20]} />
+        <sphereGeometry attach='geometry' args={[15, 20, 20]} />
       </mesh>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={0.5} />
