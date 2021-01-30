@@ -58,7 +58,7 @@ const Moon = (): any => {
           />
         ))}
         <sphereBufferGeometry attach='geometry' args={[0.75, 32, 32]} />
-        <sphereGeometry attach='geometry' args={[15, 20, 20]} />
+        <sphereGeometry attach='geometry' args={[7, 20, 20]} />
       </mesh>
       <ambientLight intensity={0.5} />
       <pointLight position={[10, 10, 10]} intensity={0.5} />
