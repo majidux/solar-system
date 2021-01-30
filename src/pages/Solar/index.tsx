@@ -3,10 +3,12 @@ import { Canvas } from 'react-three-fiber';
 import Moon from '../../component/Moon';
 import Earth from 'src/component/Earth';
 import Stars from '../../component/Stars';
+import Sound from '../../component/Sound';
 
 const Solar = () => {
   return (
     <>
+      <Sound />
       <Canvas colorManagement gl={{ antialias: false }}>
         <Suspense fallback={null}>
           <Earth />
